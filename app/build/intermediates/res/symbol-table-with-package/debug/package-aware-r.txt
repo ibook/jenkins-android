@@ -680,6 +680,8 @@ id blocking
 id bottom
 id button
 id button2
+id button3
+id button4
 id buttonPanel
 id center
 id center_horizontal
@@ -699,6 +701,7 @@ id default_activity_button
 id dimensions
 id direct
 id disableHome
+id editText
 id edit_query
 id end
 id expand_activities_button
@@ -827,6 +830,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_morse
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

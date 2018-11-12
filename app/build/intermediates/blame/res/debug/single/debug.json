@@ -1264,6 +1264,10 @@
         "source": "/Users/neo/AndroidStudioProjects/Audio/app/src/main/res/layout/activity_main.xml"
     },
     {
+        "merged": "/Users/neo/AndroidStudioProjects/Audio/app/build/intermediates/res/merged/debug/layout_activity_morse.xml.flat",
+        "source": "/Users/neo/AndroidStudioProjects/Audio/app/src/main/res/layout/activity_morse.xml"
+    },
+    {
         "merged": "/Users/neo/AndroidStudioProjects/Audio/app/build/intermediates/res/merged/debug/color-v23_abc_tint_seek_thumb.xml.flat",
         "source": "/Users/neo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d3940ac9b5fade2b3ec1901cc24b2a3f/res/color-v23/abc_tint_seek_thumb.xml"
     },

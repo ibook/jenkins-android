@@ -23,25 +23,24 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 start(440);
             }
         };
         button.setOnClickListener(onClickListener);
 
 
-//        buttonLight.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                try {
-//                    light();
-//                } catch (CameraAccessException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        });
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Morse morse = new Morse();
+//                morse.playSound();
+                morse.play();
+//                morse.synthesize();
+
+            }
+        });
 
 
     }
@@ -61,17 +60,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         // Use a new tread as this can take a while final Thread
-        thread = new Thread(new Runnable() {
-            public void run() {
-                genTone();
-                handler.post(new Runnable() {
-                    public void run() {
-                        playSound();
-                    }
-                });
-            }
-        });
-        thread.start();
+//        thread = new Thread(new Runnable() {
+//            public void run() {
+//                genTone();
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        playSound();
+//                    }
+//                });
+//            }
+//        });
+//        thread.start();
     }
 
     void genTone() {
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                     AudioFormat.CHANNEL_CONFIGURATION_STEREO, // CHANNEL_CONFIGURATION_MONO,
                     AudioFormat.ENCODING_PCM_8BIT, length, AudioTrack.MODE_STREAM);
             //生成正弦波
-            byte[] wave = new byte[2 * numSamples];
+            byte[] wave = new byte[2 * length];
             wave = SinWave.sin(wave, waveLen, length);
             if (audioTrack != null) {
                 audioTrack.write(wave, 0, length);
