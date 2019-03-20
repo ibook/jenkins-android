@@ -1,6 +1,6 @@
 pipeline {
   	agent {
-    	label "java-8"
+    	label "default"
  	}
   	//agent any
     stages  {
