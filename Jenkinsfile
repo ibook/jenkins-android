@@ -44,10 +44,15 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
             }
         }
       
-        stage("构建") {
+        stage("编译") {
+            steps {
+                sh './gradlew'
+            }
+        }
+      	stage("构建") {
             steps {
                 echo "构建中..."
-                sh './gradlew'
+                sh './gradlew build'
                 echo "构建完成."
                 archiveArtifacts artifacts: '**/build/*.apk', fingerprint: true // 收集构建产物
             }
