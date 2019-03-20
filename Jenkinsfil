@@ -24,9 +24,9 @@ pipeline {
 //         		'''
               	
               	sh 'rm -rf platforms platform-tools'
-              	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-26"'	// andorid 8.0
+              	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-26"'	// andorid 8.0
               	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-27"' 	// andorid 8.1
-              	// sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'	// andorid 9.0
+              	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'	// andorid 9.0
               	sh 'ls -la ~'
               	sh 'ls -1'
               	sh 'tools/bin/sdkmanager --list'
