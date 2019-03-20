@@ -40,7 +40,7 @@ unzip sdk-tools-linux-4333796.zip
               		sh 'tools/bin/sdkmanager --list'
                 }
                }	
-              
+              echo '安装 Android SDK License'
               writeFile(file: 'platforms/licenses/android-sdk-license', text: '''
 8933bad161af4178b1185d1a37fbf41ea5269c55
 d56f5187479451eabf01fb78af6dfcb131a6481e
