@@ -22,6 +22,7 @@ wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip sdk-tools-linux-4333796.zip
          		'''
               	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'
+              	sh 'ls -la ~'
               	sh 'tools/bin/sdkmanager --list'
             }
         }
