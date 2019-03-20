@@ -4,7 +4,7 @@ pipeline {
         stage('Parameters Example') {
             steps {
               script{
-              	def envs = sh(returnStdout: true, script: 'env').split('\n')
+              	def envs = sh(returnStdout: true, script: 'env').split('=')
 				envs.each { name  ->
     				println "Name: $name"
 				}	
