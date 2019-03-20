@@ -1,7 +1,7 @@
-#Mon Nov 12 15:54:18 CST 2018
-base.0=/Users/neo/AndroidStudioProjects/Audio/app/build/intermediates/transforms/dexMerger/debug/0
+#Wed Mar 20 17:21:07 CST 2019
+base.0=/Users/neo/AndroidStudioProjects/demo/app/build/intermediates/transforms/dexMerger/debug/1
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/Users/neo/AndroidStudioProjects/Audio/app/build/intermediates/transforms/dexMerger/debug/1
+base.1=/Users/neo/AndroidStudioProjects/demo/app/build/intermediates/transforms/dexMerger/debug/0
