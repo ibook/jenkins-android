@@ -15,6 +15,7 @@ pipeline {
       	stage("Android SDK") {
             steps {
                 sh '''
+rm -rf sdk-tools-linux-4333796.* tools
 wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip sdk-tools-linux-4333796.zip
          		'''
