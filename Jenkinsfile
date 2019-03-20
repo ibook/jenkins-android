@@ -47,7 +47,7 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
         stage("构建") {
             steps {
                 echo "构建中..."
-                sh './gradlew compileJava'
+                sh './gradlew'
                 echo "构建完成."
                 archiveArtifacts artifacts: '**/build/*.apk', fingerprint: true // 收集构建产物
             }
@@ -56,9 +56,7 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
         stage("测试") {
             steps {
                 echo "单元测试中..."
-                // 请在这里放置您项目代码的单元测试调用过程，例如:
-                // sh 'mvn test' // mvn 示例
-                // sh 'make test' // make 示例
+                // sh 'gradlew test' // make 示例
                 echo "单元测试完成."
                 // junit 'target/surefire-reports/*.xml' // 收集单元测试报告的调用过程
             }
