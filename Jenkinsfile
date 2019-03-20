@@ -54,7 +54,7 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
         stage("测试") {
             steps {
                 echo "单元测试中..."
-                sh 'gradlew test'
+                sh './gradlew test'
                 echo "单元测试完成."
                 junit 'app/build/test-results/*/*.xml' // 收集单元测试报告的调用过程
             }
