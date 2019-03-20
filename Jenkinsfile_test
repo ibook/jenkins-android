@@ -6,8 +6,8 @@ pipeline {
               script{
               	def envs = sh(returnStdout: true, script: 'env').split('\n')
 				envs.each { line  ->
-					String[] tmp = line.split('=');
-    				println "$tmp[0] = $tmp[1]"
+					String[] tmp = line.split(',');
+    				println $tmp[0]+ "="+ $tmp[1]
 				}	
               }
             }
