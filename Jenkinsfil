@@ -1,7 +1,8 @@
 pipeline {
-  	agent {
-    	label "java-8"
- 	}
+  	//agent {
+    //	label "java-8"
+ 	//}
+  	agent any
     stages  {
         
         stage("检出") {
