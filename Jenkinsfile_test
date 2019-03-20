@@ -1,41 +1,14 @@
 pipeline {
   	agent any
-
-    parameters {
-        string(
-            name: 'PARAM_STRING',
-            defaultValue: 'String',
-            description: 'String Parameter'
-        )
-
-        choice(
-            name: 'PARAM_CHOICE',
-            choices: '1st\n2nd\n3rd',
-            description: 'Choice Parameter'
-        )
-
-        booleanParam(
-            name: 'PARAM_CHECKBOX',
-            defaultValue: true,
-            description: 'Checkbox Parameter'
-        )
-
-        text(
-            name: 'PARAM_TEXT'
-            value: 'a-long-text',
-            description: 'Text Parameter'
-        )
-    }
-
     stages {
-
         stage('Parameters Example') {
             steps {
-                echo "Output Parameters"
-                echo "PARAM_STRING=${params.PARAM_STRING}"
-                echo "PARAM_CHOICE=${params.PARAM_CHOICE}"
-                echo "PARAM_CHECKBOX=${params.PARAM_CHECKBOX}"
-                echo "PARAM_TEXT=${params.PARAM_TEXT}"
+              script{
+              	def envs = sh(returnStdout: true, script: 'env').split('\n')
+				envs.each { name  ->
+    				println "Name: $name"
+				}	
+              }
             }
         }
     }
