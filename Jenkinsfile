@@ -2,7 +2,7 @@ pipeline {
   	//agent {
     //	label "default"
  	//}
-  	//agent any
+  	agent any
     stages  {
         
         stage("检出") {
