@@ -22,7 +22,7 @@ pipeline {
 
         text(
             name: 'PARAM_TEXT'
-            defaultValue: 'a-long-text',
+            value: 'a-long-text',
             description: 'Text Parameter'
         )
     }
