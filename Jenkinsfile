@@ -1,7 +1,7 @@
 pipeline {
-  	agent {
-    	label "default"
- 	}
+  	//agent {
+    //	label "default"
+ 	//}
   	//agent any
     stages  {
         
@@ -17,30 +17,33 @@ pipeline {
 		
       	stage("Android SDK") {
             steps {
-                sh '''
-rm -rf sdk-tools-linux-4333796.* tools
+              script{
+                if (fileExists('sdk-tools-linux-4333796.zip')) {
+    				echo 'Android SDK 已安装'
+				} else {
+    				echo '安装 Android SDK'
+
+                	sh '''
+# rm -rf sdk-tools-linux-4333796.* tools platforms platform-tools
 wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip sdk-tools-linux-4333796.zip
-         		'''
+         			'''
               	
-              	//sh 'rm -rf platforms platform-tools'
-              	sh 'yes|tools/bin/sdkmanager --licenses'
-              	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-26"'	// andorid 8.0
-              	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-27"' 	// andorid 8.1
-              	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'	// andorid 9.0
-              	sh '(while sleep 3; do echo "y"; done) | tools/android update sdk -u'
+              		sh 'yes|tools/bin/sdkmanager --licenses'
+              		//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-26"'	// andorid 8.0
+              		//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-27"' 	// andorid 8.1
+              		sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'	// andorid 9.0
+              		sh '(while sleep 3; do echo "y"; done) | tools/android update sdk -u'
               
-              	//writeFile(file: 'platforms/licenses/android-sdk-license', text: '''
+              		//writeFile(file: 'platforms/licenses/android-sdk-license', text: '''
 //8933bad161af4178b1185d1a37fbf41ea5269c55
 //d56f5187479451eabf01fb78af6dfcb131a6481e
 //24333f8a63b6825ea9c5514f83c2829b004d1fee
- 				//''')
+ 					//''')
 
-              	sh 'ls -la ~'
-              	sh 'ls -1 platforms'
-              	
-              	//sh 'cat ./platforms/licenses/android-sdk-license'
-              	sh 'tools/bin/sdkmanager --list'
+              		sh 'tools/bin/sdkmanager --list'
+                }	
+                sh 'ls -1 platforms'
             }
         }
       
