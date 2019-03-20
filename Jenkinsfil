@@ -38,7 +38,7 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
               	sh 'ls -la ~'
               	sh 'ls -1 platforms'
               	//sh 'cp licenses platforms/'
-              	// sh 'cat platforms/licenses'
+              	sh 'cat ./platforms/licenses'
               	sh 'tools/bin/sdkmanager --list'
             }
         }
