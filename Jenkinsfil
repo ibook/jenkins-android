@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        // 此处设定构建环境，目前可选有
-        // default, java-8, python-3.5, ruby-2.3, go-1.11 等
-        // 详情请阅 https://e.coding.net/help/knowledge-base/how-to-use-ci#agents
-        label "default"
-    }
+    agent any
     stages  {
         
         stage("检出") {
@@ -16,7 +11,18 @@ pipeline {
                 )
             }
         }
-
+		
+      	stage("Android SDK") {
+            steps {
+                sh '''
+wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+unzip sdk-tools-linux-4333796.zip
+tools/bin/sdkmanager --list
+         		'''
+              	sh 'tools/bin/sdkmanager "platform-tools" "platforms;android-28"'
+            }
+        }
+      
         stage("构建") {
             steps {
                 echo "构建中..."
