@@ -28,7 +28,10 @@ pipeline {
               	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-27"' 	// andorid 8.1
               	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'	// andorid 9.0
               	sh 'ls -la ~'
-              	sh 'ls -1'
+              	sh 'ls -1 platforms'
+              	sh 'tools/bin/sdkmanager --licenses'
+              
+              
               	sh 'tools/bin/sdkmanager --list'
             }
         }
