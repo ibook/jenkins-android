@@ -25,6 +25,7 @@ pipeline {
               	
               	sh 'rm -rf platforms platform-tools'
               	sh 'yes|tools/bin/sdkmanager --licenses'
+              	sh '(while sleep 3; do echo "y"; done) | tools/android update sdk -u'
               	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-26"'	// andorid 8.0
               	//sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-27"' 	// andorid 8.1
               	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'	// andorid 9.0
@@ -37,7 +38,7 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
 
               	sh 'ls -la ~'
               	sh 'ls -1 platforms'
-              	//sh 'cp licenses platforms/'
+              	
               	sh 'cat ./platforms/licenses/android-sdk-license'
               	sh 'tools/bin/sdkmanager --list'
             }
