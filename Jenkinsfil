@@ -17,9 +17,9 @@ pipeline {
                 sh '''
 wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip sdk-tools-linux-4333796.zip
-tools/bin/sdkmanager --list
          		'''
-              	sh 'tools/bin/sdkmanager "platform-tools" "platforms;android-28"'
+              	sh 'yes|tools/bin/sdkmanager "platform-tools" "platforms;android-28"'
+              	sh 'tools/bin/sdkmanager --list'
             }
         }
       
