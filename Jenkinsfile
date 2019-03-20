@@ -42,8 +42,9 @@ unzip sdk-tools-linux-4333796.zip
  					//''')
 
               		sh 'tools/bin/sdkmanager --list'
-                }	
-                sh 'ls -1 platforms'
+                }
+               }	
+               sh 'ls -1 platforms'
             }
         }
       
