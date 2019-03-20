@@ -39,7 +39,7 @@ pipeline {
               	sh 'ls -la ~'
               	sh 'ls -1 platforms'
               	//sh 'cp licenses platforms/'
-              	sh 'cat platforms/licenses'
+              	// sh 'cat platforms/licenses'
               	sh 'tools/bin/sdkmanager --list'
             }
         }
