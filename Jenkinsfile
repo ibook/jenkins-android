@@ -44,26 +44,27 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
             }
         }
       
-        stage("编译") {
+        stage("构建") {
             steps {
+              	echo "构建中..."
                 sh './gradlew'
+              	echo "构建完成."
             }
         }
-      	stage("构建") {
-            steps {
-                echo "构建中..."
-                sh './gradlew build'
-                echo "构建完成."
-                archiveArtifacts artifacts: '**/build/*.apk', fingerprint: true // 收集构建产物
-            }
-        }
-
         stage("测试") {
             steps {
                 echo "单元测试中..."
-                // sh 'gradlew test' // make 示例
+                sh 'gradlew test'
                 echo "单元测试完成."
-                // junit 'target/surefire-reports/*.xml' // 收集单元测试报告的调用过程
+                junit 'app/build/test-results/*/*.xml' // 收集单元测试报告的调用过程
+            }
+        }      
+      	stage("打包") {
+            steps {
+                
+                sh './gradlew assemble'
+                
+                archiveArtifacts artifacts: '**/output/*.apk', fingerprint: true // 收集构建产物
             }
         }
 
