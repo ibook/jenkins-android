@@ -64,7 +64,7 @@ d56f5187479451eabf01fb78af6dfcb131a6481e
                 
                 sh './gradlew assemble'
                 
-                archiveArtifacts artifacts: '**/output/*.apk', fingerprint: true // 收集构建产物
+                archiveArtifacts artifacts: 'app/build/outputs/apk/*/*.apk', fingerprint: true // 收集构建产物
             }
         }
 
